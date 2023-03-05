@@ -7,3 +7,6 @@
 包含原文档和exe文件
 
 后端java编写，前端javafx UI设计，SceneBuilder工具制作
+
+![image](https://user-images.githubusercontent.com/70248622/222950522-80823a14-0332-464c-8acf-6f227ad30061.png)
+
