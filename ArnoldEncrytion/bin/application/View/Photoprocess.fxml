@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <bottom>
+      <ButtonBar>
+      
+        <buttons>
+          <RadioButton id="all" alignment="CENTER_LEFT" mnemonicParsing="false" text="全选" />
+          
+          <Button id="delete" mnemonicParsing="false" text="移除" />
+          
+          <Button id="sure" mnemonicParsing="false" text="确定" />
+          
+        </buttons>
+      </ButtonBar>
+   </bottom>
+   <center>
+      <TabPane id="tabchoice" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab id="encry" text="加密" />
+          <Tab id="decry" text="解密" />
+        </tabs>
+      </TabPane>
+   </center>
+   
+</BorderPane>
