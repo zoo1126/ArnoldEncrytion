@@ -6,4 +6,4 @@
 
 包含原文档和exe文件
 
-java编写，SceneBuilder界面制作
+后端java编写，前端javafx UI设计，SceneBuilder工具制作
