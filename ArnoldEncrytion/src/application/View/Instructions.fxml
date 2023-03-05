@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller.InstructionsController">
+   <children>
+      <SplitPane dividerPositions="0.2222222222222222" prefHeight="463.0" prefWidth="794.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <ScrollPane layoutX="-19.0" layoutY="-3.0" prefHeight="461.0" prefWidth="170.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <VBox alignment="TOP_CENTER" prefHeight="459.0" prefWidth="169.0">
+                           <children>
+                              <Label text="帮助列表">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Hyperlink fx:id="usagelink" contentDisplay="CENTER" onAction="#select" text="关于工具用途">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Hyperlink>
+                              <Hyperlink fx:id="filelink" onAction="#select" text="关于文件选择">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Hyperlink>
+                              <Hyperlink fx:id="menulink" onAction="#select" text="关于菜单区">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Hyperlink>
+                              <Hyperlink fx:id="imagelink" onAction="#select" text="关于图像展示面板">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Hyperlink>
+                              <Hyperlink fx:id="waitinglink" onAction="#select" text="关于等待队列">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Hyperlink>
+                              <Hyperlink fx:id="attrlink" onAction="#select" text="关于属性">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Hyperlink>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="461.0" prefWidth="487.0">
+               <children>
+                  <StackPane layoutX="7.0" layoutY="7.0" prefHeight="461.0" prefWidth="612.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ScrollPane fx:id="toolusage" prefHeight="200.0" prefWidth="200.0">
+                           <content>
+                              <AnchorPane prefHeight="458.0" prefWidth="609.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="45.0" prefWidth="202.0" text="关于工具用途">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="20.0" top="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Text layoutX="40.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="    该工具可以读取指定的批量数字图像，对其进行加密，得到对应的加密图像；或者读取已加密图像进行解密，获得原始图像。图像加密工具应提供加密参数设置，以便加密工具使用者可以根据实际需要，通过调整加密参数来平衡加密质量及加密速度。系统功能模块主要划分为：图像加密模块，图像解密模块及图像展示模块。其中，图像加密模块可以对指定的批量数字图像进行加密，其加密结果应能够达到保密的要求，同时一张图像的加密速度不应过慢；图像解密模块可以读取已加密图像并完成解密工作，获得加密前的原始图像，解密工作应具有一定的抗干扰性，能够正确得到原始图像；图像展示模块可以实时展示正在处理的图像，避免双盲操作，展示方式应类似于主流图像浏览软件，可以同时浏览多张图片或显示单张图片；整个工具应满足安全性，友好性的要求，运行速度较快，结果准确。" wrappingWidth="529.0">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                        <ScrollPane fx:id="attributes" prefHeight="200.0" prefWidth="200.0">
+                           <content>
+                              <AnchorPane prefHeight="457.0" prefWidth="609.0">
+                                 <children>
+                                    <Text layoutX="38.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bottom参数区包含用户需要输入的参数和控制台。&#10;&#10;在这里用户可以设定图像加密变换次数，该参数默认为0，但0并没有任何实际操作的意义，仅仅作为一个初始值存在，只有大于0且小于255的参数才能正常进行加密工作。该参数小于255的原因是，图像变换次数这一参数是作为RGB值中的一个分量保存在加密图像中的，且过高的加密次数只会影响程序的运行效率，在255以内是一个比较合适的范围。如果在图像加密展示区已选择了一些图像，但没有设置图像加密变换次数就点击了确定按钮，那么程序将会弹窗提示用户未输入参数。&#10;&#10;同时用户还可以在这里设置输出图像的保存位置，系统默认将输出图像保存位置设为输入图像的保存位置，如果用户需要修改还可以自行选择位置。不过输出图像的名称是并不支持修改的，其原因就是该工具在批处理时不可能让用户一个个输入文件名称，且这种随即修改机制并不利于区分输出图像是由哪个输入图像处理的来的。控制台用来显示加密或解密操作相应结果，保证用户知道在批处理过程中，哪部分图像处理成功，哪部分图像处理失败，以及他们保存的路径等信息。" wrappingWidth="532.7158203125">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Label alignment="CENTER" prefHeight="53.0" prefWidth="169.0" text="关于属性">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="20.0" top="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <ImageView fx:id="proImage" fitHeight="116.0" fitWidth="434.0" layoutX="85.0" layoutY="69.0" onMouseClicked="#showbigImage" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/proimage.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                        <ScrollPane fx:id="waitinglist" prefHeight="200.0" prefWidth="200.0">
+                           <content>
+                              <AnchorPane prefHeight="458.0" prefWidth="610.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="71.0" prefWidth="221.0" text="关于等待队列">
+                                       <padding>
+                                          <Insets bottom="20.0" top="10.0" />
+                                       </padding>
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="waitingImage" fitHeight="244.0" fitWidth="149.0" layoutX="207.0" layoutY="59.0" onMouseClicked="#showbigImage" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/right.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Text layoutX="29.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Right批处理等待队列区，批处理等待队列中包含两个面板，“加密等待队列”和“解密等待队列”。&#10;&#10;该队列设置的意义就是为了用户在批处理过程中也能确定需要处理的图像顺序和相关信息，并且能够取消一些因为失误操作而导致的图像处理任务。&#10;&#10;在点击确定后，图像展示区的图像信息会被移除并添加至操作队列中，但是为了保证工具友好性，批处理的任务信息被显示在批处理队列中相应的面板之中，包括图像的缩略图、图像的名称、图像的存储路径和执行操作的类型等，一旦用户需要取消某个图像处理任务，只要点击面板中相应图像的取消按钮即可，当该图像尚未被处理且不是当前正在处理的任务时，该图像处理任务就会被移除操作队列中，相应按钮的位置将会变为已取消的字样；若该图像已经被处理，则该按钮的位置会被“完成”字样替代；若该图像正在被处理，则当你点击取消按钮时，系统会提示你当前图像正在处理过程中，不可被取消。这样，用户就可以知晓哪部分图像已经处理完成，哪些图像尚未开始处理。&#10;&#10;这里需要特别一提的是，批处理操作的进行与主界面的运行不属于同一线程，批处理操作是作为单独的线程进行工作的。这是因为一旦两者在同一线程工作，那么在批处理过程中，主界面将会进入“卡住不动”的状态，导致用户无法进行其他操作，且一旦批处理时间过长，甚至会给用户造成该程序已经“崩溃”、“无响应”的错觉[20]。因此将批处理单独作为一个线程不仅有利于用户进行其他操作，还有助于用户清晰在主界面看到批处理队列中任务完成的情况。在该工具的实现中，批处理线程有两个，分别处理加密过程和解密过程。" wrappingWidth="552.63623046875">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                        <ScrollPane fx:id="imageshow" prefHeight="200.0" prefWidth="200.0">
+                           <content>
+                              <AnchorPane prefHeight="459.0" prefWidth="610.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="66.0" prefWidth="276.0" text="关于图像展示面板">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="20.0" top="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Text layoutX="30.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Center图像展示区展示用户从文件选择区选择的图像。由于该工具能进行的操作包含加密和解密两种，因此中间图像展示区将包含两个部分：加密展示区和解密展示区。&#10;&#10;系统默认面板显示为加密展示区。这是为了避免待加密图像和待解密图像存放在同一个图像展示区后同时被用户选中，导致批处理过程无法有效判断待处理图像需要进行的是加密操作还是解密操作。&#10;&#10;加密面板和解密面板均是在滚动条面板中采用流式布局的方法设计的，该设计保证了面板中能够添加大量图像，且为图像移除之后其后续图像的补位工作带来了遍历，因为每个显示的图像信息选框的大小都是相同的，所有图像的缩略图均是按照图像信息选框的大小进行等比缩放的。&#10;&#10;用户切换到某个面板后，在文件选择区选择的图像就会加入相应面板，在另一个面板中是没有该图像相关信息展示的，用户确认自己要操作的图片无误之后就可以勾选图片上的选框，全部选择完毕之后就可以确定执行操作了，被选中的图像将会加入批处理队列进行相应操作，同时图像展示区也将移除相应的图像信息。这就要求用户在进行批处理之前确认批处理操作的类型，因为本该加密的图像却强行解密的话可能导致严重的后果。&#10;&#10;为了便于用户确认图像，该区域还提供了查看大图功能，用户可以按照图像加入的次序依次查看加入图像展示区的图像。具体设计在上面的3.1中已经介绍了。" wrappingWidth="549.61474609375">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <ImageView fx:id="photoImage" fitHeight="187.0" fitWidth="298.0" layoutX="138.0" layoutY="69.0" onMouseClicked="#showbigImage" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/center.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                        <ScrollPane fx:id="menu" prefHeight="200.0" prefWidth="200.0">
+                           <content>
+                              <AnchorPane prefHeight="458.0" prefWidth="609.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="52.0" prefWidth="201.0" text="关于菜单区">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="20.0" top="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <ImageView fx:id="menuImage" fitHeight="65.0" fitWidth="216.0" layoutX="184.0" layoutY="69.0" onMouseClicked="#showbigImage" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/top.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Text layoutX="47.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Top菜单区位于整个界面上部，与很多工具软件相似，包含：“文件”、“编辑”和“帮助”选项。&#10;&#10;“文件”选项下包含“关闭”和“打开”选项，选择“关闭”选项将直接结束整个进程，选择“打开”选项将会弹出新的窗口，用户可以在里面直接选择图像文件，确定图像要进行的操作的类型，然后直接将图像添加进图像展示区相应的面板中。与在文件选择区选择图像文件不同，该种选择方式可以批量选择添加图像文件，但是不支持在批量添加时查看图像大图。&#10;&#10;“编辑”选项下还包含“选择全部”按钮和“取消选择全部”按钮。“选择全部”按钮仅限对图像展示区当前面板内所有添加的图像文件进行全选，与另外一个面板的内容无关，“取消选择全部”按钮也同样仅限当前面板内的内容。&#10;&#10;“帮助”选择下还包含“使用说明”和“关于我们”。“使用说明”中将包括该工具的使用流程，为了便利用户理解和操作，还加入了相应步骤的截图，用户可以参考截图中的具体选择和操作顺序进行操作。“关于我们”中仅包含了制作者的信息，因为该工具不支持联网功能，因此不能设置反馈机制，但是添加了制作者的相应联系方式，如果有任何错误可以联系制作者。" wrappingWidth="515.54296875">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                        <ScrollPane fx:id="filechoose" prefHeight="200.0" prefWidth="200.0">
+                           <content>
+                              <AnchorPane prefHeight="457.0" prefWidth="610.0">
+                                 <children>
+                                    <ImageView fx:id="fileImage" fitHeight="193.0" fitWidth="255.0" layoutX="22.0" layoutY="70.0" onMouseClicked="#showbigImage" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/left.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label alignment="CENTER" prefHeight="39.0" prefWidth="208.0" text="关于文件选择">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="20.0" top="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Text layoutX="34.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Left文件选择区以文件树状图的形式展示。该区域的文件显示方式是模拟Windows系统文件管理器的文件夹树以及主流软件文件选择树的布局进行设计的。&#10;&#10;鉴于该工具的应用平台就是Windows系统，因此在构建文件树时除去了一些没有操作意义的系统文件夹，如：3D Object。文件树显示用户计算机中的系统文件，根节点是用户设备系统中的系统文件视图的根节点，由于该工具是图像加密工具，因此系统文件中的非文件夹或图像就没有展示给用户的必要了，即通过过滤文件后缀后显示给用户的仅仅是系统文件夹和后缀为“.jpg”、“.jpeg”、“.bmp”和“.png”的图像文件，这样也能避免用户选择无效的文件进行图像加密或者解密操作。用户在这里可以选择已知路径下的某个文件，也可以随意浏览文件夹下的图像。双击选中某个图像文件就可以将图像加入图像展示区供人浏览确认。这里值得一提的是，作为一个展示系统文件的树状结构，当该工具完成对某些图像的处理之后，或者用户对系统文件的存放位置进行了修改，那么该工具显示的树状结构也就同样需要更新，不过需要更新的仅仅是那些由用户选择过、已经展开其子节点的部分，并不需要将树状结构整体替换。该工具并不提供实时更新的情况，因此当文件修改之后，需要用户通过右键选择刷新按钮来刷新文件树，使得新的节点被加入其中。&#10;&#10;在这里需要特别介绍的是“文件”选项下的“打开”选项。与文件选择区单次选择图像不同，该功能是用于批量打开图像文件的。用户在选择了“打开”选项之后，一个新的名称为“打开”的窗口将出现，窗口中包含四个区域，从上到下第1个区域是“操作类型”区域，第2个区域是“选择文件”区域，第3个是“文件列表”区域，第4个是“按钮栏”区域。“操作类型”区域是提供给用户选择图像文件需要进行的操作，即这些批量添加的图像应该被显示进加密面板还是解密面板中，默认选择的是“加密”选项，且“加密”选项和“解密”选项是不可以同时被选中的，选中一个则另一个选项自动被取消选择。“选择文件”区域中仅有一个按钮“选择文件”，点击“选择文件”之后将显示文件选择窗口，值得一提的是，该文件选择窗口是支持多文件选择的，即用户可以通过按住键盘中“ctrl”键的同时点击鼠标左键选择需要处理的多个图像文件，选择完成之后在文件选择窗口的“文件列表”区域中会显示选中图像的缩略图和绝对路径，同时在该图像信息前面还有一个选框供用户选择。这有利于用户将选择错误的图像移除列表，或者仅选择需要操作的图像添加进相应面板。" wrappingWidth="523.6923828125">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <ImageView fx:id="openImage" fitHeight="225.0" fitWidth="341.0" layoutX="228.0" layoutY="69.0" onMouseClicked="#showbigImage" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/open.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                           <content>
+                              <Label text="制作人：张园园" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </StackPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
